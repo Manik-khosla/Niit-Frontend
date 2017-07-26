@@ -38,7 +38,7 @@ public class ProductController {
 	{   
 		productservice.AddProduct(p);
 		MultipartFile image=p.getImage();
-		Path path=Paths.get("C:\\Users\\Manik khosla\\workspace\\Niit-ECommerce\\src\\main\\webapp\\WEB-INF\\images\\"+p.getId()+".jpg");
+		Path path=Paths.get("C:\\Users\\Manik khosla\\git\\Niit-frontend\\Niit-ECommerce\\src\\main\\webapp\\WEB-INF\\images\\"+p.getId()+".jpg");
 		
 		try {
 			image.transferTo(new File(path.toString()));

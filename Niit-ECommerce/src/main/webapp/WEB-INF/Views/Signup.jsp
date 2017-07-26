@@ -19,6 +19,28 @@ $("#first").show();
 $("#personaldetails").show();
 $('body').css('overflow','hidden');
 }
+
+function copyadd()
+{  
+	if(document.getElementById('Copyaddress').checked==true)
+	{
+	document.getElementById('sA').value=document.getElementById('bA').value;	
+	document.getElementById('sS').value=document.getElementById('bS').value;	
+	document.getElementById('sCity').value=document.getElementById('bCity').value;	
+	document.getElementById('sState').value=document.getElementById('bState').value;	
+	document.getElementById('sC').value=document.getElementById('bC').value;	
+	document.getElementById('sZ').value=document.getElementById('bZ').value;
+	}
+	else
+		{
+		document.getElementById('sA').value="";
+		document.getElementById('sS').value="";
+		document.getElementById('sCity').value="";
+		document.getElementById('sState').value="";
+		document.getElementById('sC').value="";
+		document.getElementById('sZ').value="";
+		}
+}
 </script>
 <body style="overflow:hidden">
 <%@ include file="nav.jsp"%>
@@ -75,7 +97,7 @@ $('body').css('overflow','hidden');
 <div class="row">
 
 
-<div class="col-lg-4">
+<div class="col-lg-4" >
 <h1 id="second" style="color:Black;font-family:Microsoft Sans Serif;font-size:28">Login Details</h1>
 
 
@@ -100,32 +122,32 @@ $('body').css('overflow','hidden');
 
 <div class="form-group">
 <form:label class="control-label" path="billingaddress.ApartmentNumber">Apartment number</form:label>
-<form:input path="billingaddress.ApartmentNumber"  class="form-control" style="width:50%" placeholder="Apartment number" required="required"/>
+<form:input path="billingaddress.ApartmentNumber" id="bA" class="form-control" style="width:50%" placeholder="Apartment number" required="required"/>
 </div>
 
 <div class="form-group">
 <form:label class="control-label" path="billingaddress.StreetName">Street Name</form:label>
-<form:input path="billingaddress.StreetName"  class="form-control" style="width:50%" placeholder="Street" required="required"/>
+<form:input path="billingaddress.StreetName"  id="bS" class="form-control" style="width:50%" placeholder="Street" required="required"/>
 </div>
 
 <div class="form-group">
 <form:label class="control-label" path="billingaddress.City">City</form:label>
-<form:input path="billingaddress.City"  class="form-control" style="width:50%" placeholder="City" required="required"/>
+<form:input path="billingaddress.City"  id="bCity" class="form-control" style="width:50%" placeholder="City" required="required"/>
 </div>
 
 <div class="form-group">
 <form:label class="control-label" path="billingaddress.State">State</form:label>
-<form:input path="billingaddress.State"  class="form-control" style="width:50%" placeholder="State" required="required"/>
+<form:input path="billingaddress.State" id="bState" class="form-control" style="width:50%" placeholder="State" required="required"/>
 </div>
 
 <div class="form-group">
 <form:label class="control-label" path="billingaddress.Country">Country</form:label>
-<form:input path="billingaddress.Country"  class="form-control" style="width:50%" placeholder="Country" required="required"/>
+<form:input path="billingaddress.Country" id="bC" class="form-control" style="width:50%" placeholder="Country" required="required"/>
 </div>
 
 <div class="form-group">
 <form:label class="control-label" path="billingaddress.Zipcode">Zipcode</form:label>
-<form:input path="billingaddress.Zipcode"  class="form-control" style="width:50%" placeholder="Zipcode" required="required"/>
+<form:input path="billingaddress.Zipcode" id="bZ" class="form-control" style="width:50%" placeholder="Zipcode" required="required"/>
 </div>
 
 <div class="form-group">
@@ -139,38 +161,41 @@ $('body').css('overflow','hidden');
 </div><!-- second column end -->
 
 <div class="col-lg-4">
-<h1 id="first" style="color:Black;font-family:Microsoft Sans Serif;font-size:28">shipping Details</h1>
+<h1 id="first" style="color:Black;font-family:Microsoft Sans Serif;font-size:28">Shipping Details</h1>
 
 <div class="form-group">
 <form:label class="control-label" path="shippingaddress.ApartmentNumber">Apartment number</form:label>
-<form:input path="shippingaddress.ApartmentNumber"  class="form-control" style="width:50%" placeholder="Apartment number" required="required"/>
+<form:input path="shippingaddress.ApartmentNumber" id="sA" class="form-control" style="width:50%" placeholder="Apartment number" required="required"/>
 </div>
 
 <div class="form-group">
 <form:label class="control-label" path="shippingaddress.StreetName">Street Name</form:label>
-<form:input path="shippingaddress.StreetName"  class="form-control" style="width:50%" placeholder="Street" required="required"/>
+<form:input path="shippingaddress.StreetName" id="sS" class="form-control" style="width:50%" placeholder="Street" required="required"/>
 </div>
 
 <div class="form-group">
 <form:label class="control-label" path="shippingaddress.City">City</form:label>
-<form:input path="shippingaddress.City"  class="form-control" style="width:50%" placeholder="City" required="required"/>
+<form:input path="shippingaddress.City"  id="sCity" class="form-control" style="width:50%" placeholder="City" required="required"/>
 </div>
 
 <div class="form-group">
 <form:label class="control-label" path="shippingaddress.State">State</form:label>
-<form:input path="shippingaddress.State"  class="form-control" style="width:50%" placeholder="State" required="required"/>
+<form:input path="shippingaddress.State"  id="sState" class="form-control" style="width:50%" placeholder="State" required="required"/>
 </div>
 
 <div class="form-group">
 <form:label class="control-label" path="shippingaddress.Country">Country</form:label>
-<form:input path="shippingaddress.Country"  class="form-control" style="width:50%" placeholder="Country" required="required"/>
+<form:input path="shippingaddress.Country"  id="sC" class="form-control" style="width:50%" placeholder="Country" required="required"/>
 </div>
 
 <div class="form-group">
 <form:label class="control-label" path="shippingaddress.Zipcode">Zipcode</form:label>
-<form:input path="shippingaddress.Zipcode"  class="form-control" style="width:50%" placeholder="Zipcode" required="required"/>
+<form:input path="shippingaddress.Zipcode" id="sZ" class="form-control" style="width:50%" placeholder="Zipcode" required="required"/>
 </div>
 
+<div class="form-group">
+<input type="checkbox" id="Copyaddress" onclick="copyadd()" /><label>Billing and Shipping address are same</label>
+</div>
 
 </div><!-- third column end -->
 
