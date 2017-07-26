@@ -11,6 +11,7 @@ function disable(){
 	});
 
 }
+
 </script>
 </head>
 <body>
@@ -27,6 +28,10 @@ function disable(){
 <th>Price</th>
 <th>Quantity</th>
 <th>Description</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 
 <tbody>

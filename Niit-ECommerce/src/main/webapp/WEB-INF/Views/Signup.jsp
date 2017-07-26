@@ -9,9 +9,16 @@ function slide1()
 	$("#first").toggle("slide");
 	$("#personaldetails").toggle("slide");
 	$('body').css('overflow','auto');
+	$('#lbsform').show();
 }
 
-
+function back()
+{
+$("#lbsform").toggle("slide");
+$("#first").show();
+$("#personaldetails").show();
+$('body').css('overflow','hidden');
+}
 </script>
 <body style="overflow:hidden">
 <%@ include file="nav.jsp"%>
@@ -25,19 +32,25 @@ function slide1()
 <div id="personaldetails" style="margin-left:250px">
 <form:hidden path="Id" />
 
+<p style="color:red">${Duplicateusername}</p>
+
 <div class="form-group">
 <form:label class="control-label" path="FirstName">First Name</form:label>
-<form:input path="FirstName" id="fname" class="form-control" style="width:50%" placeholder="First Name" required="required"/>
+<form:input path="FirstName" id="fname" class="form-control" style="width:50%" placeholder="First Name"/>
+<form:errors path="FirstName" cssStyle="color:red" ></form:errors>
 </div>
 
 <div class="form-group">
 <form:label class="control-label" path="LastName">Last Name</form:label>
-<form:input path="LastName"  id="lname" class="form-control" style="width:50%" placeholder="Last Name" required="required"/>
+<form:input path="LastName"  id="lname" class="form-control" style="width:50%" placeholder="Last Name"/>
+<form:errors path="LastName" cssStyle="color:red" ></form:errors>
 </div>
 
 <div class="form-group">
 <form:label class="control-label" path="Email">Email</form:label>
-<form:input path="Email" id="email" class="form-control" style="width:50%" placeholder="Email" required="required"/>
+<form:input path="Email" id="email" class="form-control" style="width:50%" placeholder="Email"/>
+<form:errors path="Email" cssStyle="color:red" ></form:errors>
+<p style="color:red">${Duplicateemail }</p>
 </div>
 
 <div class="form-group">
@@ -49,7 +62,7 @@ function slide1()
 
 <div class="form-group">
 <form:label class="control-label" path="ContactNumber">Contact Number</form:label>
-<form:input path="ContactNumber"  id="Cno" class="form-control" style="width:50%" placeholder=" 10 digit Contact Number" required="required"/>
+<form:input path="ContactNumber"  id="Cno" class="form-control" style="width:50%" placeholder=" 10 digit Contact Number"/>
 <form:errors path="ContactNumber" cssStyle="color:red" ></form:errors>
 </div>
 
@@ -57,7 +70,7 @@ function slide1()
 <button type="reset" class="btn">Reset</button>
 </div>
 
-<div class="container-fluid" style="margin-top:45px;">
+<div class="container-fluid" id="lbsform" style="margin-top:55px;">
 
 <div class="row">
 
@@ -76,6 +89,9 @@ function slide1()
 <form:password path="user.Password" class="form-control" style="width:50%" placeholder="Password" required="required"/>
 </div>
 
+<div>
+<button type="button" class="btn btn-primary" onclick="back()"><span class="glyphicon glyphicon-triangle-left"></span>Back</button>
+</div>
 </div><!-- first column end -->
 
 
@@ -113,6 +129,10 @@ function slide1()
 </div>
 
 <div class="form-group">
+<form:label path="Tac"><form:checkbox path="Tac"  disabled="true"/>I accept Terms and conditions</form:label>
+</div>
+
+<div>
 <button type="submit" class="btn btn-info">Submit</button>
 <button type="reset" class="btn" >Reset</button>
 </div>

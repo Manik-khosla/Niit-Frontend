@@ -12,10 +12,10 @@
 
 <!-- Jstl tag library -->
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
  
-
 <link href="Styling/Styles.css" rel="stylesheet">
+
 <title>Home Decor</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -24,7 +24,7 @@
 <img src="images/Logo.jpg" alt="Logo" id="Logo">
 <nav class="navbar navbar-default" id="navigationbar">
 <ul class="nav navbar-nav">
-<li class="active"><a href=""><span class="glyphicon glyphicon-home fa-2x"></span></a></li>
+<li class="active"><a href="/"><span class="glyphicon glyphicon-home fa-2x"></span></a></li>
 
 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cutlery"></span> Kitchen</a>
 <ul class="dropdown-menu" id="dropmenu">

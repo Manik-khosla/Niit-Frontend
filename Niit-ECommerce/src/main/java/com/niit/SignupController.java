@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.niit.model.Customer;
+import com.niit.model.User;
 import com.niit.service.CustomerService;
 
 @Controller
@@ -26,8 +27,28 @@ public class SignupController {
 	}
 	
 	@RequestMapping("/SignupUser")
-	public String SaveUserInfo(@ModelAttribute(name="user")Customer user)
+	public String SaveUserInfo(@Valid @ModelAttribute(name="user")Customer user,BindingResult result,Model model)
 	{   
+		if(result.hasErrors())
+	{
+		return "Signup";
+	}
+		
+		User usr=customerservice.ValidateUsername(user.getUser().getUsername());
+		
+		if(usr!=null)
+		{
+		model.addAttribute("Duplicateusername","UserName Already Exists");
+		return "Signup";
+		}
+		
+		Customer customer=customerservice.ValidateEmail(user.getEmail());
+		
+		if(customer!=null)
+		{
+			model.addAttribute("Duplicateemail","This Email Is Already Registered");
+			return "Signup";
+		}
 		customerservice.SaveUserInfo(user);
 		return "index";
 	}
